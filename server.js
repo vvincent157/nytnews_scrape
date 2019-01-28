@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-app.get('/home', function(req,res) {
+app.get('/', function(req,res) {
     res.render('home');
 })
 
