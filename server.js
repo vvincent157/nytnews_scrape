@@ -41,7 +41,7 @@ app.get("/scrape", function(req, res) {
         var thingToSave = {
           title: $(this).html(),
           link: "",
-
+          favorited: false
         }
         articleModel.create(thingToSave).then(function(data){
           console.log(data);
@@ -59,6 +59,14 @@ app.get("/allarticles",function(req,res){
   articleModel.find({}).then(function(data){
     res.json(data)
   })
+})
+
+app.put('/updateArticles/:id', function(req, res) {
+  console.log('WE HIT UPDATE!!!', req.params);
+
+
+  
+
 })
 
 app.listen(PORT, function() {
